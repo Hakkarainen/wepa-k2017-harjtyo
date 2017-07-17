@@ -1,0 +1,27 @@
+2017-07-17 17:50:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DISCUSSIONUSER" already exists; SQL statement:
+CREATE TABLE DiscussionUser
+(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(20) DEFAULT NULL
+    --admin BOOLEAN DEFAULT 0);
+  ) [42101-192]
+2017-07-17 20:11:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DISCUSSIONUSER" already exists; SQL statement:
+CREATE TABLE DiscussionUser
+(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(20) DEFAULT NULL
+    --admin BOOLEAN DEFAULT 0);
+  ) [42101-192]
+2017-07-17 20:12:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DISCUSSIONUSER" already exists; SQL statement:
+CREATE TABLE DiscussionUser
+(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(20) DEFAULT NULL
+    --admin BOOLEAN DEFAULT 0);
+  ) [42101-192]
