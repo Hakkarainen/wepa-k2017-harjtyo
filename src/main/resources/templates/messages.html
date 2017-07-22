@@ -21,8 +21,8 @@
     <body>
         <div class="container">
             <div class="page-header">
-                <h1 th:text="'Keskustelu: ' + ${header}">Otsikko</h1>
-                <p>Takaisin keskusteluun <a href="" th:href="@{~/{header}/(header=${header})}" th:text="${header}">Alue</a></p>
+                <h1 th:text="'Viesti: ' + ${message.writer}">Otsikko</h1>
+                <p><a href="" th:href="@{~/{writer}/(writer=${message.writer})}" th:text="${message.writer}">lue viesti</a></p>
             </div>
 
             <div class="row" th:each="message: ${messagesPerDiscussion}">

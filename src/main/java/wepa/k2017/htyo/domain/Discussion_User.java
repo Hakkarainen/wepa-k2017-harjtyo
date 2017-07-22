@@ -14,11 +14,11 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 
 @Entity
-@Table(name = "DiscussionUser")
-public class DiscussionUser extends AbstractPersistable<Long> {
+@Table(name = "Discussion_User")
+public class Discussion_User extends AbstractPersistable<Long> {
     
-    @Column(name = "userName")
-    private String userName;
+    @Column(name = "user_Name")
+    private String user_Name;
     @Column(name = "password")
     private String password;
     
@@ -33,20 +33,20 @@ public class DiscussionUser extends AbstractPersistable<Long> {
 //    private List<DiscussionMessage> messages;
     
       
-    public DiscussionUser() {
+    public Discussion_User() {
     }
 
-    public DiscussionUser(String userName) {
-        this.userName = userName;
+    public Discussion_User(String user_Name) {
+        this.user_Name = user_Name;
         this.password = "";
     }
     
-        public DiscussionUser(String userName, String password) {
-        this.userName = userName;
+        public Discussion_User(String user_Name, String password) {
+        this.user_Name = user_Name;
         this.password = password;
     }
     public String getUserName() {
-        return userName;
+        return user_Name;
     }    
     public List<DiscussionTopic> getDiscussionsTopics() {
         if (this.discussionTopics == null) {

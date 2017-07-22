@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import wepa.k2017.htyo.domain.Discussion;
 import wepa.k2017.htyo.domain.DiscussionTopic;
 import wepa.k2017.htyo.domain.DiscussionMessage;
-import wepa.k2017.htyo.domain.DiscussionUser;
+import wepa.k2017.htyo.domain.Discussion_User;
 
 /**
  *
@@ -31,7 +31,7 @@ public class DiscussionAdminService {
     private Discussion discussion;
     private DiscussionTopic discussionTopic;
     private DiscussionMessage discussionMessage;
-    private DiscussionUser discussionUser;
+    private Discussion_User discussionUser;
     
     //******** Discussion Database initialization ********
     //Amount of persistent objects to be created into DiscussionDB
@@ -139,7 +139,7 @@ public class DiscussionAdminService {
     
     //Users
     public void createUser(Model model, String name) {
-       discussionUser = new DiscussionUser(name); //CREATE
+       discussionUser = new Discussion_User(name); //CREATE
        discussionUserRepository.save(discussionUser);
        model.addAttribute("user", discussionUser);
     }

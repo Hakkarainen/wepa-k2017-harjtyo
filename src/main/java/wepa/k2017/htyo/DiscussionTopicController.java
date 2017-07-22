@@ -48,7 +48,8 @@ public class DiscussionTopicController {
     @RequestMapping("/oneDiscussionTopic")
     public String getOneDiscussionTopic(Model model, @RequestParam Long discussionTopicId) {
         discussionTopicService.getOneDiscussionTopic(model, discussionTopicId);
-        return "/discussionTopic";
+        this.getAllDiscussionsPerTopic(model);
+        return "/discussionsPerTopic";
     }
     
     // Tämä GET näyttää kaikki keskustelualueet

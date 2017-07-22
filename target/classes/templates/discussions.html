@@ -11,7 +11,7 @@
         <p>Takaisin <a href="" th:href="@{~/home}">aluevalintalistaukseen</a></p>
         <ol>
             <li th:each="discussion: ${discussions}">
-                <p><span th:text="${header}"></span> <a th:href="${'/discussions/' + discussion.id}">linkki</a></p>
+                <p><span th:text="${discussion.header}"></span> <a th:href="${'/oneDiscussion?discussionId=' + discussion.Id}">keskustelu</a></p>
             </li>
         </ol>
     </body>

@@ -12,7 +12,7 @@
 
         <ol>
             <li th:each="discussion: ${discussionsPerTopic}">
-                <p><span th:text="${header}"></span> <a th:href="${'/discussionsPerTopic/' + discussion.id}">linkki</a></p>
+                <p><span th:text="${discussion.header}"></span> <a th:href="${'/oneDiscussion?discussionId=' + discussion.id}">linkki</a></p>
             </li>
         </ol>
     </body>

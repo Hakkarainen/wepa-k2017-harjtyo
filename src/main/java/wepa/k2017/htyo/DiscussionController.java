@@ -1,12 +1,5 @@
 package wepa.k2017.htyo;
 
-import java.io.FileReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashMap;
-import org.h2.tools.RunScript;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +11,7 @@ import wepa.k2017.htyo.domain.DiscussionList;
 import wepa.k2017.htyo.domain.DiscussionMessage;
 import wepa.k2017.htyo.domain.DiscussionTopic;
 import wepa.k2017.htyo.domain.DiscussionTopicList;
-import wepa.k2017.htyo.domain.DiscussionUser;
+import wepa.k2017.htyo.domain.Discussion_User;
 
 /**
  *
@@ -30,7 +23,7 @@ public class DiscussionController {
     @Autowired
     private DiscussionTopicService discussionTopicService;
 
-    public DiscussionController() throws SQLException {
+    public DiscussionController(){
        
         //CREATE DB-OBJECTS
         Discussion discussion = new Discussion();
@@ -39,20 +32,18 @@ public class DiscussionController {
         DiscussionTopicList discussionTopicList = new DiscussionTopicList();
         DiscussionList discussionList = new DiscussionList();
         DiscussionMessage discussionMessage = new DiscussionMessage();
-        //DiscussionUser discussionUser = new DiscussionUser();
+        Discussion_User discussion_User = new Discussion_User();
         
         //CREATE SERVICE-OBJECTS
         DiscussionLiService discussionLiService = new DiscussionLiService();
         DiscussionTopicService discussionTopicService = new DiscussionTopicService();
         MessageService messageService = new MessageService();
-        //UserService userService = new UserService();
+        UserService userService = new UserService();
     }
     
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String discussionHome(Model model) {
-        
-        //discussionTopicService = new DiscussionTopicService();
-        //discussionTopicService.getAllDiscussionTopics(model);
+        discussionTopicService.getAllDiscussionTopics(model);
         return "/index";
     }
 }

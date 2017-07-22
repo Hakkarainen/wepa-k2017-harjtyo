@@ -8,8 +8,13 @@
 
     <body>
         <h1>Käyttäjä</h1>
-         <p><span th:text="${userName}"></span> <a th:href="${'/allUsers'}">linkki</a></p>
+        <table>
+         <tr>
+            <td th:text="${user.user_Name}">kirjoittaja</td>        
+            <td th:text="${user.password}">salasana</td>
+         </tr>
+        </table>
     
-    <p>Takaisin <a href="" th:href="@{~/home}">aluevalintalistaukseen</a></p>
+    <p>Takaisin aluevalintalistaukseen: <a th:href="@{~/home}">aluevalinta</a></p>
     </body>
 </html>

@@ -7,15 +7,14 @@
     </head>
 
     <body>
-        <p>Takaisin keskusteluun <a href="" th:href="@{~/{header}/(header=${header})}" th:text="${header}">Alue</a></p>
-        
         <h1>Viesti</h1>
         <table>
          <tr>
-            <td th:text="${writer}">kirjoittaja</td>        
-            <td th:text="${content}">sisältö</td>
-        <!--<td th:text="${#dates.format(latest, 'yyyy-MM-dd hh:mm:ss')}">YY</td>-->
+            <td th:text="${message.writer}">kirjoittaja</td>        
+            <td th:text="${message.content}">sisältö</td>
          </tr>
         </table>
+
+        <p>Takaisin keskusteluvalintaan: <a href="" th:href="@{~/discussion}">keskustelu</a></p>
     </body>
 </html>

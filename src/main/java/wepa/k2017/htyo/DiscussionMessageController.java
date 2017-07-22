@@ -25,7 +25,7 @@ public class DiscussionMessageController {
     @RequestMapping(value = "/crtMessage", method = RequestMethod.POST)
     public String createMessage(Model model, @RequestParam String writer, @RequestParam String content) {
         messageService.createMessage(model, writer, content);
-        return "redirect:/message";
+        return "allMessages";
     }
 
     // Tämä POST poistaa viestin, "${'/viestit/' + viesti.id}"

@@ -35,12 +35,11 @@
                             <th>Viestejä</th>
                             <th>Viimeisin</th>
                         </tr>
-                        <tr th:each="discussion: ${discussions}">
-                            
-                            <td><a th:text="${header}" th:href="@{~/{topic}/{id}(topic=${topic},id=${discussion.id})}">Otsikko</a></td>        
-                            <td th:text="${numberOfMessages}">XX</td>
+                        <tr th:each="discussion: ${discussions}"> 
+                            <td><a th:text="${discussion.header}" th:href="@{~/{topic}/{id}(topic=${discussion.topic},id=${discussion.id})}">Otsikko</a></td>        
+                            <td th:text="${discussion.numberOfMessages}">XX</td>
                           <!--<td th:text="${latest != null} ? ${#dates.format(latest, 'yyyy-MM-dd hh:mm:ss')} : '-'">YY</td>-->
-                            <td th:text="${latest != null} ? ${#dates.format(latest, 'yyyy-MM-dd hh:mm:ss')} : '-'">YY</td>
+                            <td th:text="${discussion.latest != null} ? ${#dates.format(latest, 'yyyy-MM-dd hh:mm:ss')} : '-'">YY</td>
                         </tr>
                     </table>
                 </div>

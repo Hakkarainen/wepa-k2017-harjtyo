@@ -31,7 +31,7 @@
                     <h3>Keskustelualueet</h3> 
                     <table class="table">
                         <tr th:each="discussionTopic: ${discussionTopics}">
-                            <td th:text="${discussionTopic.header}"><a th:href="${'/discussionTopics/' + discussionTopic.id}">linkki</a></td>
+                            <td th:text="${header}"><a th:href="${'/discussionTopics/' + discussionTopic.id}">linkki</a></td>
                         </tr>
                         
                         <tr>
@@ -40,8 +40,8 @@
                             <th>Viimeisin</th>
                         </tr>
                          <tr th:each="discussion: ${discussions}"> 
-                            <td><a th:text="${discussion.header}" th:href="@{~/{topic}/{id}(topic=${topic},id=${discussion.id})}">Otsikko</a></td>        
-                            <td th:text="${discussion.numberOfMessages}">XX</td>
+                            <td><a th:text="${header}" th:href="@{~/{topic}/{id}(topic=${topic},id=${discussion.id})}">Otsikko</a></td>        
+                            <td th:text="${numberOfMessages}">XX</td>
                             <!--<td th:text="${discussion.latest != null} ? ${#dates.format(discussion.latest, 'yyyy-MM-dd hh:mm:ss')} : '-'">YY</td>-->
                         </tr>
                     </table>

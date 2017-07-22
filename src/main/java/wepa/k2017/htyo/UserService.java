@@ -4,7 +4,7 @@ package wepa.k2017.htyo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import wepa.k2017.htyo.domain.DiscussionUser;
+import wepa.k2017.htyo.domain.Discussion_User;
 
 /**
  *
@@ -16,13 +16,13 @@ public class UserService {
     @Autowired
     private DiscussionUserRepository discussionUserRepository;
     // käytetyt oliot
-    private DiscussionUser discussionUser;
+    private Discussion_User discussion_User;
     
     //Users
-    public void createUser(Model model, String userName, String password) {
-       this.discussionUser = new DiscussionUser(userName, password); //CREATE
-       discussionUserRepository.save(discussionUser);
-       model.addAttribute("user", discussionUser);
+    public void createUser(Model model, String user_Name, String password) {
+       this.discussion_User = new Discussion_User(user_Name, password); //CREATE
+       discussionUserRepository.save(discussion_User);
+       model.addAttribute("user", discussion_User);
     }
 
     public void deleteUser(Long userId) {

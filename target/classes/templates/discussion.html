@@ -22,20 +22,20 @@
         <div class="container">
             <div class="page-header">
                 <h1 th:text="'Keskustelu: ' + ${header}">Otsikko</h1>
-                <p>Takaisin <a href="" th:href="@{~/home}">aluevalintalistaukseen</a></p>
+                <p>Takaisin aluevalintalistaukseen: <a href="" th:href="@{~/home}">aluevalinta</a></p>
             </div>
 
             <div class="row" th:each="message: ${messagesPerDiscussion}">
                 <div class="row">
                     <div class="col-md-2"></div>
                     <!--<div class="col-md-8"><p><strong th:text="${writer}">Kirjoittaja</strong> sanoi <em th:text="${#dates.format(sendTime, 'yyyy-MM-dd hh:mm:ss')}">ajanhetki</em>:</p></div>-->
-                    <div class="col-md-8"><p><strong th:text="${writer}">Kirjoittaja</strong> sanoi:</p></div>
+                    <div class="col-md-8"><p><strong th:text="${message.writer}">Kirjoittaja</strong> sanoi:</p></div>
                     
                     <div class="col-md-2"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-md-8"><p class="well" th:text="${content}">Viesti</p></div>
+                    <div class="col-md-8"><p class="well" th:text="${message.content}">Viesti</p></div>
                     <div class="col-md-2"></div>
                 </div>
             </div>
