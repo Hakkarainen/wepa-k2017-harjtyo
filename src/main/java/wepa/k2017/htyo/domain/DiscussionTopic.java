@@ -23,7 +23,6 @@ public class DiscussionTopic extends AbstractPersistable<Long> {
     @Column(name = "header")
     private String header;
     
-        
     @OneToMany
     private List<Discussion> discussions;
     
@@ -36,11 +35,26 @@ public class DiscussionTopic extends AbstractPersistable<Long> {
         this.header = header;
     }
     
-        public List<Discussion> getDiscussions() {
+    public List<Discussion> getDiscussions() {
         if (this.discussions == null) {
             this.discussions = new ArrayList<>();
         }
         return this.discussions;
+    }
+    
+    public List<Discussion> addDiscussion(Discussion discussion) {
+        if (this.discussions == null) {
+            this.discussions = new ArrayList<>();
+        }
+        this.discussions.add(discussion);
+        return this.discussions;
+    }
+    
+        public void delDiscussion(Discussion discussion) {
+        if (this.discussions == null) {
+            return;
+        }
+        this.discussions.remove(discussion);
     }
 
     public Integer getTopic() {
@@ -52,11 +66,11 @@ public class DiscussionTopic extends AbstractPersistable<Long> {
     }
     
     public String getWriter() {
-        return this.header;
+        return this.writer;
     }
 
     public void setWriter(String header) {
-        this.header = header;
+        this.header = writer;
     }
     
     public String getHeader() {

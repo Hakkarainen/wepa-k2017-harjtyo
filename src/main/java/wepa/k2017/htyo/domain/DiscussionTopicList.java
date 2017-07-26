@@ -12,9 +12,9 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
  * @author THyyppä
  */
 @Entity
-@NamedNativeQuery(name = "discussionsPerTopic", 
-        query = "SELECT * FROM DiscussionTopicList ORDER BY latest DESC", 
-        resultClass = DiscussionTopicList.class)
+//@NamedNativeQuery(name = "discussionsPerTopic", 
+//        query = "SELECT * FROM DiscussionTopicList ORDER BY latest DESC", 
+//        resultClass = DiscussionTopicList.class)
 
 @Table(name = "DiscussionTopicList")
 public class DiscussionTopicList extends AbstractPersistable<Long> {

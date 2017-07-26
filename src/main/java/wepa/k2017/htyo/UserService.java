@@ -4,7 +4,7 @@ package wepa.k2017.htyo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import wepa.k2017.htyo.domain.Discussion_User;
+import wepa.k2017.htyo.domain.DiscussionUser;
 
 /**
  *
@@ -16,13 +16,13 @@ public class UserService {
     @Autowired
     private DiscussionUserRepository discussionUserRepository;
     // käytetyt oliot
-    private Discussion_User discussion_User;
+    private DiscussionUser discussionUser;
     
     //Users
-    public void createUser(Model model, String user_Name, String password) {
-       this.discussion_User = new Discussion_User(user_Name, password); //CREATE
-       discussionUserRepository.save(discussion_User);
-       model.addAttribute("user", discussion_User);
+    public void createUser(Model model, String userName, String password) {
+       this.discussionUser = new DiscussionUser(userName, password); //CREATE
+       discussionUserRepository.save(discussionUser);
+       model.addAttribute("discussionUser", discussionUser);
     }
 
     public void deleteUser(Long userId) {
@@ -33,10 +33,10 @@ public class UserService {
        //DiscussionUser user = discussionUserRepository.findOne(userId);
         //Do update here !
         //discussionRepository.save(user); //UPDATE/WRITE
-        model.addAttribute("user", discussionUserRepository.findOne(userId));
+        model.addAttribute("discussionUser", discussionUserRepository.findOne(userId));
     }
 
     public void getAllUsers(Model model) {
-        model.addAttribute("users", discussionUserRepository.findAll());
+        model.addAttribute("discussionUsers", discussionUserRepository.findAll());
     }
 }

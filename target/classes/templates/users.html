@@ -17,8 +17,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     </head>
-
-    
+   
     <body>
         
        
@@ -26,8 +25,8 @@
         
         <h1>Käyttäjät</h1>
         <ol>
-            <li th:each="user: ${users}">
-                <p><span th:text="${user.user_Name}"></span> <a th:href="${'/oneUser?userId=' + user.Id}">käyttäjä</a></p>
+            <li th:each="discussionUser: ${discussionUsers}">
+                <p><span th:text="${discussionUser.userName}"></span> <a th:href="${'/oneUser?userId=' + discussionUser.Id}">käyttäjä</a></p>
             </li>
         </ol>
         
@@ -39,7 +38,7 @@
          <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8 bg-info">
-                    <form method="POST" action="/crtUser">
+                    <form method="GET" action="/crtUser">
                         <div class="form-group">
                             <label for="userName">Nimimerkki:</label>
                             <input type="text" name="userName" id="userName" class="form-control" maxlength="20" required="required" />

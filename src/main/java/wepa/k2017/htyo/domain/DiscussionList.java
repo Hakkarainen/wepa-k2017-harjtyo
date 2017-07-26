@@ -12,15 +12,13 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
  * @author THyyppä
  */
 @Entity
-@NamedNativeQuery(name = "findMessagesInOrder", 
-        query = "SELECT * FROM DiscussionList ORDER BY latest DESC", 
-        resultClass = DiscussionList.class)
+//@NamedNativeQuery(name = "findDiscussionsInOrder", 
+//        query = "SELECT * FROM DiscussionList ORDER BY latest DESC", 
+//        resultClass = DiscussionList.class)
 
 @Table(name = "DiscussionList")
 public class DiscussionList extends AbstractPersistable<Long> {
 
-    @Column(name = "row")
-    private int row;
     @Column(name = "topic")
     private int topic;
     @Column(name = "header")
@@ -33,8 +31,7 @@ public class DiscussionList extends AbstractPersistable<Long> {
     public DiscussionList() {
     }
     
-    public DiscussionList(int row, int topic, String header, int amount, String latest) {
-        this.row = row;
+    public DiscussionList(int topic, String header, int amount, String latest) {
         this.topic = topic;
         this.header = header;
         this.amount = amount;
@@ -58,18 +55,4 @@ public class DiscussionList extends AbstractPersistable<Long> {
         
         return this.latest;
     }
-    public int getRow() {
-        
-        return this.row;
-    }
-    public int compareTo(DiscussionList t) {
-       if (this.row > t.getRow()) {
-            return 1;
-        } else if (this.row < t.getRow()) {
-            return -1;
-        } else {
-            return 0;
-
-        }    
-    }   
 }

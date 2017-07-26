@@ -22,7 +22,7 @@ public class DiscussionUserController {
     }
 
     // Tämä POST luo ja tallettaa uuden käyttäjän
-    @RequestMapping(value = "/crtUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/crtUser", method = RequestMethod.GET)
     public String createUser(Model model, @RequestParam String userName, @RequestParam String password) {
         userService.createUser(model, userName, password);
         return "/user";

@@ -1,10 +1,10 @@
 INSERT INTO Discussion_User (password, user_Name) VALUES ('p1','Kayttaja_a');
-INSERT INTO Discussion_User (password, user_Name) VALUES ('p1','Kayttaja_b');
-INSERT INTO Discussion_User (password, user_Name) VALUES ('p2','Kayttaja_c');
+INSERT INTO Discussion_User (password, user_Name) VALUES ('p2','Kayttaja_b');
+INSERT INTO Discussion_User (password, user_Name) VALUES ('p3','Kayttaja_c');
 
-INSERT INTO Discussion_User (password, user_Name) VALUES ('p3','Admin_a');
-INSERT INTO Discussion_User (password, user_Name) VALUES ('p4','Admin_b');
-INSERT INTO Discussion_User (password, user_Name) VALUES ('p5','Admin_c');
+INSERT INTO Discussion_User (password, user_Name) VALUES ('p4','Admin_a');
+INSERT INTO Discussion_User (password, user_Name) VALUES ('p5','Admin_b');
+INSERT INTO Discussion_User (password, user_Name) VALUES ('p6','Admin_c');
 
 INSERT INTO Discussion_Topic (topic, writer, header) VALUES (1, 'Kayttaja_a', 'Keskustelualue_a');
 INSERT INTO Discussion_Topic (topic, writer, header) VALUES (2, 'Kayttaja_b', 'Keskustelualue_b');

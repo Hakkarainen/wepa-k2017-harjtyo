@@ -11,7 +11,7 @@ import wepa.k2017.htyo.domain.DiscussionList;
 import wepa.k2017.htyo.domain.DiscussionMessage;
 import wepa.k2017.htyo.domain.DiscussionTopic;
 import wepa.k2017.htyo.domain.DiscussionTopicList;
-import wepa.k2017.htyo.domain.Discussion_User;
+import wepa.k2017.htyo.domain.DiscussionUser;
 
 /**
  *
@@ -32,7 +32,7 @@ public class DiscussionController {
         DiscussionTopicList discussionTopicList = new DiscussionTopicList();
         DiscussionList discussionList = new DiscussionList();
         DiscussionMessage discussionMessage = new DiscussionMessage();
-        Discussion_User discussion_User = new Discussion_User();
+        DiscussionUser discussion_User = new DiscussionUser();
         
         //CREATE SERVICE-OBJECTS
         DiscussionLiService discussionLiService = new DiscussionLiService();

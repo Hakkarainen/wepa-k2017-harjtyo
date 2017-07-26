@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import wepa.k2017.htyo.domain.Discussion;
-import wepa.k2017.htyo.domain.DiscussionList;
 import wepa.k2017.htyo.domain.DiscussionTopicList;
 
 /**
@@ -42,8 +41,7 @@ public class DiscussionLiService {
     public void getAllDiscussions(Model model) {
         model.addAttribute("discussions", discussionLiRepository.findAll());
     }
-    
     public void findMessagesPerDiscussion(Model model) {
-        model.addAttribute("messagesPerDiscussion", DiscussionTopicList.class);
+        model.addAttribute("messagesPerDiscussion", discussion.getDiscussionMessages());  
     }
 }

@@ -23,7 +23,7 @@ public class MessageService {
     public void createMessage(Model model, String writer, String content) {
         discussionMessage = new DiscussionMessage(writer, content); //CREATE
         discussionMessageRepository.save(discussionMessage);
-        model.addAttribute("message", discussionMessage);
+        model.addAttribute("discussionMessage", discussionMessage);
     }
 
     public void deleteMessage(Long messageId) {
@@ -34,10 +34,10 @@ public class MessageService {
         //discussionMessage = discussionMessageRepository.findOne(messageId);
         //Do update here !
         //discussionMessageRepository.save(discussionMessage); //UPDATE/WRITE
-        model.addAttribute("message", discussionMessageRepository.findOne(messageId));
+        model.addAttribute("discussionMessage", discussionMessageRepository.findOne(messageId));
     }
 
     public void getAllMessages(Model model) {
-        model.addAttribute("messages", discussionMessageRepository.findAll());
+        model.addAttribute("discussionMessages", discussionMessageRepository.findAll());
     } 
 }

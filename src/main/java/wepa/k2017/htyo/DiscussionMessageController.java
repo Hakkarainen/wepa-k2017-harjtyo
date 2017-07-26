@@ -17,15 +17,15 @@ public class DiscussionMessageController {
 
     @Autowired
     private MessageService messageService;
-
+    
     public DiscussionMessageController() {
     }
 
     // Tämä POST luo ja tallettaa uuden viestin
-    @RequestMapping(value = "/crtMessage", method = RequestMethod.POST)
+    @RequestMapping(value = "/crtMessage", method = RequestMethod.GET)
     public String createMessage(Model model, @RequestParam String writer, @RequestParam String content) {
         messageService.createMessage(model, writer, content);
-        return "allMessages";
+        return "message";
     }
 
     // Tämä POST poistaa viestin, "${'/viestit/' + viesti.id}"

@@ -17,14 +17,12 @@ public class DiscussionLiController {
     
     @Autowired
     private DiscussionLiService discussionLiService;
-    @Autowired
-    private MessageListService messageListService;
 
     public DiscussionLiController() {
     }
 
     // Tämä POST luo ja tallettaa uuden keskustelun
-    @RequestMapping(value = "/crtDiscussion", method = RequestMethod.POST)
+    @RequestMapping(value = "/crtDiscussion", method = RequestMethod.GET)
     public String createDiscussion(Model model, @RequestParam Integer initiatedBy, @RequestParam Integer topic, @RequestParam String header) {
         this.discussionLiService.createDiscussion(model, initiatedBy, topic, header);
         return "/discussion";
@@ -53,7 +51,7 @@ public class DiscussionLiController {
      // Tämä GET näyttää kaikki tietyn keskustelun viestit
     @RequestMapping("/msgPerDiscussion")
     public String getAllMessagesPerDiscussion(Model model) {
-        messageListService.findMessagesPerDiscussion(model);      
+        this.discussionLiService.findMessagesPerDiscussion(model);
         return "/messages";
     }
 }

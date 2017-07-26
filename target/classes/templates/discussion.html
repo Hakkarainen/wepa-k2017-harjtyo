@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title th:text="${header}">Keskustelu</title>
+        <title th:text="${discussion.header}">Keskustelu</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous" />
@@ -21,21 +21,21 @@
     <body>
         <div class="container">
             <div class="page-header">
-                <h1 th:text="'Keskustelu: ' + ${header}">Otsikko</h1>
+                <h1 th:text="'Keskustelu: ' + ${discussion.header}">Otsikko</h1>
                 <p>Takaisin aluevalintalistaukseen: <a href="" th:href="@{~/home}">aluevalinta</a></p>
             </div>
 
-            <div class="row" th:each="message: ${messagesPerDiscussion}">
+            <div class="row" th:each="discussionMessage: ${messagesPerDiscussion}">
                 <div class="row">
                     <div class="col-md-2"></div>
                     <!--<div class="col-md-8"><p><strong th:text="${writer}">Kirjoittaja</strong> sanoi <em th:text="${#dates.format(sendTime, 'yyyy-MM-dd hh:mm:ss')}">ajanhetki</em>:</p></div>-->
-                    <div class="col-md-8"><p><strong th:text="${message.writer}">Kirjoittaja</strong> sanoi:</p></div>
+                    <div class="col-md-8"><p><strong th:text="${discussionMessage.writer}">Kirjoittaja</strong> sanoi:</p></div>
                     
                     <div class="col-md-2"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-md-8"><p class="well" th:text="${message.content}">Viesti</p></div>
+                    <div class="col-md-8"><p class="well" th:text="${discussionMessage.content}">Viesti</p></div>
                     <div class="col-md-2"></div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8 bg-info">
                     <h3>Lähetä uusi viesti:</h3>
-                    <form method="POST" action="/crtMessage">
+                    <form method="GET" action="/crtMessage">
                         <div class="form-group">
                             <label for="writer">Nimimerkki:</label>
                             <input type="text" name="writer" id="writer" class="form-control" maxlength="20" required="required" />
